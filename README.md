@@ -2,149 +2,132 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 Présentation du projet
 
-The **AI Sentiment Analysis System** is a modular Python application designed to analyze and classify textual customer feedback into sentiment categories: **positive, negative, and neutral**.
+Le **AI Sentiment Analysis System** est une application modulaire développée en Python, conçue pour analyser et classifier des messages textuels clients en trois catégories de sentiments : **positif, négatif et neutre**.
 
-The system simulates a simplified **customer support analytics pipeline**, commonly used in service-oriented environments to prioritize incoming requests and extract operational insights from textual data.
+Ce système simule un **pipeline simplifié d’analyse de support client**, utilisé dans des environnements de service pour prioriser les demandes entrantes et extraire des insights opérationnels à partir de données textuelles.
 
-This project focuses on **software architecture, modular design, and data processing pipelines**, rather than relying on heavy machine learning frameworks.
-
----
-
-## 🎯 Objectives
-
-The primary goals of this project are:
-
-- Design a scalable and modular Python architecture
-- Implement a rule-based Natural Language Processing (NLP) pipeline
-- Simulate real-world customer support data analysis workflows
-- Generate actionable insights from unstructured text data
-- Practice software engineering principles (separation of concerns, maintainability)
+Ce projet met l’accent sur **l’architecture logicielle, la conception modulaire et les pipelines de traitement de données**, plutôt que sur l’utilisation de modèles de machine learning lourds.
 
 ---
 
-## 🧠 System Architecture
+## 🎯 Objectifs du projet
 
-The system follows a **layered modular architecture**, separating responsibilities into independent components:
+Les principaux objectifs sont :
 
-### 1. Presentation Layer
+- Concevoir une architecture Python scalable et modulaire
+- Implémenter un pipeline NLP basé sur des règles (rule-based)
+- Simuler des workflows réels d’analyse de support client
+- Générer des insights exploitables à partir de données textuelles non structurées
+- Appliquer les principes d’ingénierie logicielle (séparation des responsabilités, maintenabilité)
+
+---
+
+## 🧠 Architecture du système
+
+Le système suit une architecture modulaire en couches, où chaque composant a une responsabilité bien définie :
+
+### 1. Couche de présentation
 - `main.py`
-- Handles CLI interaction and user workflow orchestration
+- Gère l’interaction utilisateur (interface CLI)
+- Orchestre le workflow global du programme
 
-### 2. Processing Layer
+---
+
+### 2. Couche de traitement
 - `sentiment.py`
-- Implements rule-based sentiment classification logic
+- Implémente la logique de classification des sentiments basée sur des règles
 
-### 3. Business Logic Layer
+---
+
+### 3. Couche logique métier
 - `utils.py`
-- Implements:
-  - Priority scoring system
-  - Response suggestion engine
-  - Satisfaction metrics computation
+- Implémente :
+  - Système de priorité
+  - Génération de réponses automatiques
+  - Calcul des indicateurs de satisfaction
 
-### 4. Data Persistence Layer
+---
+
+### 4. Couche de persistance des données
 - `storage.py`
-- Handles file-based storage and log management
+- Gère la sauvegarde et la lecture des données via fichiers locaux
+- Assure le suivi des logs système
 
 ---
 
-## ⚙️ Core Functionalities
+## ⚙️ Fonctionnalités principales
 
-### 📊 Sentiment Classification
-A rule-based classification engine that analyzes textual input using keyword matching and returns:
+### 📊 Classification des sentiments
+Un moteur basé sur des règles analyse les messages textuels et retourne :
 
-- Positive 😊
-- Negative 😡
-- Neutral 😐
-
----
-
-### 🚨 Priority Scoring System
-
-Each message is assigned a priority level based on sentiment:
-
-- Negative → High Priority
-- Neutral → Medium Priority
-- Positive → Low Priority
+- Positif 😊
+- Négatif 😡
+- Neutre 😐
 
 ---
 
-### 💬 Automated Response Suggestion
+### 🚨 Système de priorisation
 
-The system generates predefined response templates based on sentiment classification to simulate a customer support assistant behavior.
+Chaque message est associé à un niveau de priorité :
 
----
-
-### 📁 Data Persistence
-
-All analyzed messages are stored in a structured text file (`data.txt`) for traceability and historical analysis.
+- Négatif → Haute priorité
+- Neutre → Priorité moyenne
+- Positif → Faible priorité
 
 ---
 
-### 📈 Analytics Module
+### 💬 Suggestions de réponses automatiques
 
-The system computes:
-
-- Total number of processed messages
-- Sentiment distribution
-- Customer satisfaction ratio
-- Basic performance indicators
+Le système génère des réponses prédéfinies en fonction du sentiment détecté afin de simuler un assistant de support client.
 
 ---
 
-## 🏗️ Design Principles
+### 📁 Persistance des données
 
-This project follows clean software engineering principles:
-
-- **Separation of Concerns**
-- **Modular Design**
-- **Extensibility for future AI integration**
-- **Maintainable and readable codebase**
-- **Lightweight dependency management**
+Tous les messages analysés sont stockés dans un fichier structuré (`data.txt`) afin d’assurer la traçabilité et l’analyse historique.
 
 ---
 
-## 🧪 Technical Limitations
+### 📈 Module d’analyse
 
-This version uses a **rule-based approach** instead of machine learning models due to design simplicity.
+Le système calcule :
 
-Limitations include:
-
-- No deep semantic understanding
-- Limited contextual awareness
-- Dependency on keyword-based classification
+- Nombre total de messages traités
+- Répartition des sentiments
+- Taux de satisfaction client
+- Indicateurs de performance simples
 
 ---
 
-## 🚀 Future Improvements
+## 🧪 Limites techniques
 
-Planned enhancements include:
+Cette version utilise une approche **basée sur des règles (rule-based)** au lieu de modèles de machine learning.
+
+Limites :
+
+- Absence de compréhension sémantique avancée
+- Analyse contextuelle limitée
+- Dépendance aux mots-clés
+
+---
+
+## 🚀 Améliorations futures
 
 ### 🤖 NLP Upgrade
-- Integration with `spaCy` or `transformers`
-- Context-aware sentiment detection
+- Intégration de `spaCy` ou `transformers`
+- Analyse contextuelle avancée des sentiments
 
-### 🌐 Web Interface
-- Flask / FastAPI REST API
-- Web dashboard for analytics visualization
+### 🌐 Interface Web
+- API REST avec Flask ou FastAPI
+- Dashboard web pour visualisation des analyses
 
-### 🗄️ Database Integration
-- Replace file storage with SQLite or PostgreSQL
-- Enable structured querying
+### 🗄️ Base de données
+- Remplacement des fichiers par SQLite ou PostgreSQL
+- Requêtes structurées et optimisation des données
 
-### 📊 Advanced Analytics
-- Time-series sentiment tracking
-- Agent performance evaluation
-- Customer behavior insights
-
----
-
-## 🧰 Technologies Used
-
-- Python 3.x
-- Standard Libraries (os, re)
-- File I/O system
-- Modular programming design
-
----
+### 📊 Analyse avancée
+- Suivi des sentiments dans le temps
+- Analyse de performance des agents
+- Insights comportementaux clients
